@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+}
+
+.container{
+    width: 90%;
+    height: 1200px;
+    outline: 2px solid;
+    margin: 40px auto;
+
+    display: grid;
+    /* grid-template-columns: 30% 50px 100px; */ /* Setea el numero y tamano de columnas de forma manual */
+
+    /* grid-template-columns: repeat(5, 20%);  *//* Esto repite el mismo formato de columna 5 veces
+                                            con un 20% de tamano */
+
+    /* grid-template-columns: 1fr 1fr 1fr; */ /* El fr es una unidad de medida que determina que se 
+                                 ocupe todo el espacio y se divida equitativamente (fr=fraccion) */
+
+    /* grid-template-columns: repeat(3, 1fr); */ /*Hace que se generen 3 columnas, divididas equitativamente
+                                            y hace que se arregle el problema del desborde del 
+                                            column-gap */
+
+
+    /* grid-template-rows: 100px 200px 20%; */ /* Setea el numero y tamano de filas de forma manual */
+
+    /* grid-auto-rows: 100px; */ /*hace que los filas se generen de forma automatica con tal tamano */
+
+    /* grid-template-rows: repeat(10, 10%); */ /* Esto repite el mismo formato de fila 10 veces
+                                            con un 10% de tamano */
+
+    /* row-gap: 1em; */ /* Separacion entre filas, pero hace que se desborden del contenedor */
+
+    /* grid-template-rows: repeat(10, 1fr); */ /*Hace que se generen 10 filas, divididas equitativamente
+                                         y hace que se arregle el problema del desborde del 
+                                         row-gap */
+
+   /*  column-gap: 1em; */ /* Espaciado entre columnas */
+
+    /* gap: 20px; Aplica espaciado de 20px tanto para columnas como filas */
+    /* gap: 20px 10px; */ /*Aplica espaciado de 20px para filas y 10px para columnas */
+
+    /* grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px; */
+
+    /*grid-template-areas:
+    "element1 element1 element1 element2 element2"
+    "element1 element1 element1 element2 element2"
+    "element3 element3 element3 element2 element2"
+    "element3 element3 element3 element2 element2"
+    "element4 element4 element4 element4 ."; */
+
+    /* Como se tiene 5 filas entonces son 5 comillas */
+    /* Dentro de las comillas se pone 5 nombres porque hay 5 columnas */
+    /* Es importante que todos los elementos sean cuadrados orectangulos para que funcione */
+
+    /* Para poner una celda vacia se debe poner un punto en lugar de su nombre */
+
+    grid-template-columns: repeat(auto-fit, minmax(250px 1fr)); /* El auto-fit permite crear columnas
+                                                                de forma dinamica */
+                                                                
+                                                                /* El min-max es para definir el (tamano-
+                                                                minimo tamano-maximo) de las columnas */
+    /* rid-template-rows: repeat(5, 1fr); */
+    gap: 10px;
+}
+
+.item{
+    /* width: 100px;
+    height: 100px; */  /* Con el display grid ya no es necesario el width y height */
+    color: #ffffff;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.item1{
+    background-color: slateblue;
+    /* grid-column: 1/4; */  /* Esto indica que este recuadro inicia en la linea 1
+                            de las columnas y termina en la linea cuatro de las columnas 
+                            ver inspeccionar en el sitio para mas referencias sobre esto */
+
+    /* grid-row: 1/3; */      /* Esto indica que este recuadro inicia en la linea 1
+                                de las filas y termina en la linea tres de las filas 
+                                ver inspeccionar en el sitio para mas referencias sobre esto */
+    
+    /* grid-area: element1; */
+
+    background-image: url(../img/grid1.jpg)
+}
+
+.item2{
+    background-color: deeppink;
+    /* grid-column: 4/6;
+    grid-row: 1/5; */
+
+    /* grid-area: element2; */
+
+    background-image: url(../img/grid2.jpg)
+}
+
+.item3{
+    background-color: seagreen;
+    /* grid-column: 1/4;
+    grid-row: 3/5; */
+
+    /* grid-area: element3; */
+
+    background-image: url(../img/grid3.jpg)
+}
+
+.item4{
+    background-color: brown;
+    /* grid-column: 1/-1; */  /* El -1 significa que no importe que la grid se haga mas chica
+                                o grande, ese cuadro va llegar siempre al final */
+    /* grid-row: 5/-1; */
+
+    /* grid-area: element4; */
+
+    background-image: url(../img/grid4.jpg)
+}
+
+.item5{
+    background-color: cornflowerblue;
+
+    background-image: url(../img/grid5.jpg)
+}
+
+.item6{
+    background-color: rebeccapurple;
+
+    background-image: url(../img/grid6.jpg)
+}
+
+@media (min-width:700px){
+    /* .container{  
+        grid-template-areas:
+        "element1 element1 element1 element2 element2"
+        "element1 element1 element1 element2 element2"
+        "element3 element3 element3 element2 element2"
+        "element3 element3 element3 element2 element2"
+        "element4 element4 element4 element2 element2"; 
+    } */
+    
+}
